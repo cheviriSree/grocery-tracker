@@ -1,0 +1,14 @@
+# Ignore node_modules in all subfolders
+**/node_modules/
+
+# Frontend specific
+groceryApp/.expo/
+groceryApp/dist/
+groceryApp/web-build/
+
+# Backend specific
+grocery-backend/.env
+
+# General
+npm-debug.log*
+.DS_Store
