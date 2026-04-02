@@ -76,7 +76,12 @@ const HomeScreen = () => {
                 keyExtractor={(item) => item.id.toString()} // Ensure ID is a string
                 renderItem={({ item }) => (
                     <View style={styles.itemCard}>
-                        <Text style={styles.itemText}>{item.name}</Text>
+                        <View style={{ flex: 1 }}>
+                            <Text style={styles.itemText}>{item.name}</Text>
+                            <Text style={styles.categoryText}>
+                                Category: {item.category || 'General'}
+                            </Text>
+                        </View>
                         <TouchableOpacity onPress={() => deleteItem(item.id)}>
                             <Text style={{ color: 'red', fontWeight: 'bold' }}>Delete</Text>
                         </TouchableOpacity>
@@ -133,6 +138,16 @@ const styles = StyleSheet.create({
     },
     itemText: {
         fontSize: 18,
+    },
+    categoryText: {
+        fontSize: 16,
+        color: '#FF0000',
+        fontStyle: 'italic',
+        fontWeight: 'bold',
+        marginTop: 8,
+        backgroundColor: '#FFFF00',
+        paddingHorizontal: 8,
+        paddingVertical: 4,
     },
 });
 
